@@ -42,6 +42,10 @@ for line in open('github-2009',"r"):
     wtchcnt_str = fields[8]
     isscnt_str = fields[9]
     langs_str = fields[10]
+    langs_arr = []
+    larr = langs_str.split(',')
+    for l in larr:
+	langs_arr.append(l)
 
     create_date = ""
     updt_date = ""
@@ -69,7 +73,8 @@ for line in open('github-2009',"r"):
          'subs':int(subscnt_str),
          'wtch':int(wtchcnt_str),
          'isus':int(isscnt_str),
-         'langs':langs_str
+         #'langs':langs_str
+         'langs':langs_arr
     }
 
 # Insert into MongoDB 
